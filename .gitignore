@@ -1,0 +1,5 @@
+# Project exclude paths
+/analyticfunction/target/
+/sparkrdd/target/
+/sparktools/target/
+/target/

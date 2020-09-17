@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="hadoop-lzo-0.4.20">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sparktools/src/main/resources/hadoop-lzo-0.4.20.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
