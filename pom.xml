@@ -8,20 +8,12 @@
     <artifactId>tools</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>kafkastudy</module>
+    </modules>
     <properties>
         <spark.version>2.4.3</spark.version>
     </properties>
-    <repositories>
-        <repository>
-            <id>cloudera</id>
-            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
-        </repository>
-    </repositories>
-    <modules>
-        <module>sparktools</module>
-        <module>analyticfunction</module>
-        <module>sparkrdd</module>
-    </modules>
     <dependencies>
         <dependency>
             <!-- scala 2.11 自身版本2.3.3-->
@@ -41,13 +33,14 @@
             <artifactId>spark-sql_2.11</artifactId>
             <version>${spark.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.hadoop.gplcompression/hadoop-lzo -->
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.38</version>
         </dependency>
     </dependencies>
-
     <build>
         <sourceDirectory>src/main/scala</sourceDirectory>
         <testSourceDirectory>src/test/scala</testSourceDirectory>

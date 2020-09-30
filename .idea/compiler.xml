@@ -8,8 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="sparkrdd" />
         <module name="sparktools" />
-        <module name="analyticfunction" />
+        <module name="kafkastudy" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="analyticfunction" target="8" />
+      <module name="sparktools (1)" target="8" />
+      <module name="sparktools (2)" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

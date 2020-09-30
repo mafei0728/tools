@@ -1,5 +1,6 @@
 package com.mafei.utils
 
+import org.apache.spark.sql.SparkSession
 import org.apache.spark.{SparkConf, SparkContext}
 
 /*
@@ -10,6 +11,19 @@ import org.apache.spark.{SparkConf, SparkContext}
  * @Date 2020/9/17
  */
 object SparkContextFactory {
-  val conf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("mafei")
-  val sc: SparkContext = new SparkContext(conf)
+  LogLevelSet.setLogLevel()
+  val conf: SparkConf = new SparkConf()
+    .setMaster("local[2]")
+    .setAppName("mafei")
+  val spark: SparkSession = SparkSession.builder()
+    .enableHiveSupport()
+    .config(conf)
+    .getOrCreate()
+
+  val sc: SparkContext = spark.sparkContext
+
+
+  def getSourcePath(file: String): String = {
+    this.getClass.getClassLoader.getResource(file).getPath
+  }
 }

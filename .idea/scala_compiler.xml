@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="Maven 1" modules="sparktools">
+    <profile name="Maven 1" modules="sparktools,sparktools (1)">
       <parameters>
         <parameter value="-dependencyfile" />
         <parameter value="E:\kkb\notebook\hadoop\tools\sparktools\target/.scala_dependencies" />
@@ -23,6 +23,12 @@
       <parameters>
         <parameter value="-dependencyfile" />
         <parameter value="E:\kkb\notebook\hadoop\tools\sparkrdd\target/.scala_dependencies" />
+      </parameters>
+    </profile>
+    <profile name="Maven 5" modules="kafkastudy">
+      <parameters>
+        <parameter value="-dependencyfile" />
+        <parameter value="E:\kkb\notebook\hadoop\tools\kafkastudy\target/.scala_dependencies" />
       </parameters>
     </profile>
   </component>

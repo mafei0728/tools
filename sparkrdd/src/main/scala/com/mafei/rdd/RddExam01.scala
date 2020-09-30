@@ -14,7 +14,7 @@ object RddExam01 extends App {
   val sc = SparkContextFactory.sc
   LogLevelSet.setLogLevel()
   // 读取文件
-  val rdd01: RDD[String] = sc.textFile("E:\\kkb\\notebook\\hadoop\\tools\\sparkrdd\\src\\main\\resources\\access.log")
+  val rdd01: RDD[String] = sc.textFile("src/main/resources/access.log")
   // 过滤出含有网站的数据
   val rdd02 = rdd01.filter(_.contains("http"))
   // 取除http
