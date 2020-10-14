@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="sparkrdd" />
         <module name="sparktools" />
+        <module name="testmodule" />
+        <module name="sparkstreaming" />
         <module name="kafkastudy" />
       </profile>
     </annotationProcessing>
