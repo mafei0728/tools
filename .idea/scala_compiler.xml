@@ -43,5 +43,17 @@
         <parameter value="E:\kkb\notebook\hadoop\tools\testmodule\target/.scala_dependencies" />
       </parameters>
     </profile>
+    <profile name="Maven 8" modules="hbases">
+      <parameters>
+        <parameter value="-dependencyfile" />
+        <parameter value="E:\kkb\notebook\hadoop\tools\hbases\target/.scala_dependencies" />
+      </parameters>
+    </profile>
+    <profile name="Maven 9" modules="globaltool">
+      <parameters>
+        <parameter value="-dependencyfile" />
+        <parameter value="E:\kkb\notebook\hadoop\tools\globaltool\target/.scala_dependencies" />
+      </parameters>
+    </profile>
   </component>
 </project>

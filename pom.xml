@@ -12,11 +12,18 @@
         <module>kafkastudy</module>
         <module>sparkstreaming</module>
         <module>testmodule</module>
+        <module>hbases</module>
+        <module>globaltool</module>
     </modules>
     <properties>
         <spark.version>2.4.3</spark.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>globaltool</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <!-- scala 2.11 自身版本2.3.3-->
             <groupId>org.apache.spark</groupId>

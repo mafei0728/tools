@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="hbases" />
+        <module name="testmodule" />
+        <module name="globaltool" />
+        <module name="kafkastudy" />
         <module name="sparkrdd" />
         <module name="sparktools" />
-        <module name="testmodule" />
         <module name="sparkstreaming" />
-        <module name="kafkastudy" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

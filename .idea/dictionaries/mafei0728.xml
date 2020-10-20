@@ -2,11 +2,15 @@
   <dictionary name="mafei0728">
     <words>
       <w>analyticfunction</w>
+      <w>datas</w>
+      <w>kafkastudy</w>
       <w>mafei</w>
       <w>producter</w>
       <w>qian</w>
+      <w>sparkstreaming</w>
       <w>sparktools</w>
       <w>struckwithkafka</w>
+      <w>testmodule</w>
     </words>
   </dictionary>
 </component>
