@@ -12,7 +12,7 @@ import org.apache.hadoop.hbase.io.ImmutableBytesWritable
 import org.apache.hadoop.hbase.mapreduce.TableInputFormat
 import org.apache.hadoop.hbase.util.Bytes
 import org.apache.spark.SparkConf
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{SparkSession, SQLContext}
 
 import scala.collection.mutable.ArrayBuffer
 
@@ -55,7 +55,7 @@ object HbaseBaseOperator {
       // 如果不存在就报异常
       admin.getNamespaceDescriptor(name)
     } catch {
-      case ex: Exception =>
+      case exception: Exception =>
         val namespace = NamespaceDescriptor.create(name).build()
         admin.createNamespace(namespace)
     }
@@ -127,9 +127,14 @@ object HbaseBaseOperator {
   // 读取hbase转化成df
   def hbaseToDF(): Unit = {
     configuration.set(TableInputFormat.INPUT_TABLE, "ns01:idea")
-    val conf = new SparkConf().setAppName("hbase").setMaster("local[1]")
+    val conf = new SparkConf()
+      .setAppName("hbase")
+      .setMaster("local[1]")
+      .set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
     val spark = SparkSession.builder().config(conf).getOrCreate()
     val sc = spark.sparkContext
+    val sqlContext = spark.newSession()
+    import sqlContext.implicits._
     val hbase = sc.newAPIHadoopRDD(configuration, classOf[TableInputFormat], classOf[ImmutableBytesWritable], classOf[Result])
     hbase.foreach(println)
   }

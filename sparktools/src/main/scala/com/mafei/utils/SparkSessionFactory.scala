@@ -1,5 +1,7 @@
 package com.mafei.utils
 
+import org.apache.calcite.avatica.ColumnMetaData.StructType
+import org.apache.log4j.Level
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -11,8 +13,15 @@ import org.apache.spark.{SparkConf, SparkContext}
  * @Date 2020/8/18
  */
 object SparkSessionFactory {
-  val conf: SparkConf = new SparkConf().setAppName("mafei0728").setMaster("local[2]")
-  private val sparkSess: SparkSession = SparkSession.builder().enableHiveSupport().config(conf).getOrCreate()
+  // 创建spark conf
+  val conf: SparkConf = new SparkConf().setAppName("test").setMaster("local[1]")
+
+  val sparkSess: SparkSession = SparkSession.builder().config(conf).getOrCreate()
   val sc: SparkContext = sparkSess.sparkContext
   def getSession: SparkSession = sparkSess
+
+  def main(args: Array[String]): Unit = {
+    val spark = SparkSessionFactory.getSession
+    spark.createDataFrame(Seq((1,2),(2,3))).toDF("a","b").show()
+  }
 }

@@ -11,6 +11,8 @@
       <w>sparktools</w>
       <w>struckwithkafka</w>
       <w>testmodule</w>
+      <w>udfsource</w>
+      <w>withhbase</w>
     </words>
   </dictionary>
 </component>
